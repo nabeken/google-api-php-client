@@ -355,6 +355,16 @@ class Google_Client
   }
 
   /**
+   * Set the hosted domain
+   * @see https://developers.google.com/accounts/docs/OAuth2Login#hd-param
+   * @param string $hd
+   */
+  public function setHostedDomain($hd)
+  {
+    $this->config->setHostedDomain($hd);
+  }
+
+  /**
    * Fetches a fresh OAuth 2.0 access token with the given refresh token.
    * @param string $refreshToken
    * @return void

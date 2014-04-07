@@ -293,6 +293,15 @@ class Google_Config
   }
 
   /**
+   * Set the hosted domain for the auth class.
+   * @param $hd string the hosted domain
+   */
+  public function setHostedDomain($hd)
+  {
+    $this->setAuthConfig('hd', $hd);
+  }
+
+  /**
    * @return string the base URL to use for API calls
    */
   public function getBasePath()

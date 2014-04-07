@@ -160,6 +160,12 @@ class Google_Auth_OAuth2 extends Google_Auth_Abstract
       $params['state'] = $this->state;
     }
 
+    // If the hd (hosted domain) is specified, add hd to auth URL.
+    $hd = $this->client->getClassConfig($this, 'hd');
+    if (!empty($hd)) {
+      $params['hd'] = $hd;
+    }
+
     return self::OAUTH2_AUTH_URL . "?" . http_build_query($params, '', '&');
   }
 
